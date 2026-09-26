@@ -1,0 +1,19 @@
+name: tests
+on:
+  pull_request:
+  push:
+    branches: [master]
+jobs:
+  tests:
+    # Baseline (COVERAGE.md, 2026-09-26): 0 percent measured, no test on
+    # master. The measurable project code is the Python update tool
+    # buildsrc_lib (619 lines) and 124 lines of packaging shell; the
+    # vendored Webmin Perl is upstream code and is not measured. Nothing
+    # runs pytest yet, so the check is created with the test-shell.yml
+    # bootstrap placeholder. The pull request that adds the first
+    # buildsrc_lib test switches this job to test-python.yml with
+    # package: buildsrc_lib and the measured threshold; the threshold is
+    # only ever raised (decision 0006).
+    uses: keel-linux/.github/.github/workflows/test-shell.yml@main
+    with:
+      threshold: 0
