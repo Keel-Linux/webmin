@@ -1,0 +1,34 @@
+# gitleaks false positives, by fingerprint. Each was read; none is a live secret.
+#
+# Minified xterm.js bundles: high-entropy identifiers inside the code.
+09041e970e5e0070ab43fb49c62e85a08a18d634:modules/xterm/xterm-addon-webgl.js:generic-api-key:2
+09041e970e5e0070ab43fb49c62e85a08a18d634:modules/xterm/xterm.js:generic-api-key:10
+0d97888f71d3500859162507d9356ade6549ab90:modules/xterm/xterm-addon-canvas.js:generic-api-key:2
+0d97888f71d3500859162507d9356ade6549ab90:modules/xterm/xterm-addon-webgl.js:generic-api-key:2
+0d97888f71d3500859162507d9356ade6549ab90:modules/xterm/xterm.js:generic-api-key:9
+dc55c52ee96467f19adfcf201684eff8706e43dc:modules/xterm/xterm-addon-webgl.js:generic-api-key:2
+dc55c52ee96467f19adfcf201684eff8706e43dc:modules/xterm/xterm-addon-webgl.js:generic-api-key:2
+dc55c52ee96467f19adfcf201684eff8706e43dc:modules/xterm/xterm-addon-webgl.js:generic-api-key:2
+dc55c52ee96467f19adfcf201684eff8706e43dc:modules/xterm/xterm.js:generic-api-key:9
+dc55c52ee96467f19adfcf201684eff8706e43dc:modules/xterm/xterm.js:generic-api-key:9
+dc55c52ee96467f19adfcf201684eff8706e43dc:modules/xterm/xterm.js:generic-api-key:9
+#
+# Translation strings ("key=value" lines of lang files) and the WebSocket
+# protocol GUID of RFC 6455 in Protocol::WebSocket::Response.
+0d97888f71d3500859162507d9356ade6549ab90:themes/authentic-theme/lang/ms.auto:generic-api-key:394
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:modules/bind8/lang/hr.auto:generic-api-key:1218
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:modules/bind8/lang/hu:generic-api-key:1067
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:modules/bind8/lang/sl.auto:generic-api-key:1218
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:modules/squid/lang/mt.auto:generic-api-key:325
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:webmin_core/vendor_perl/Protocol/WebSocket/Response.pm:generic-api-key:93
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:webmin_core/webmin/lang/af.auto:generic-api-key:30
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:webmin_core/webmin/lang/nl.auto:generic-api-key:2
+#
+# nginx-lib.pl: the PEM header string it compares a file against, not a key.
+69c08116d75e014390f6903355db50d947e8507a:modules/nginx/nginx-lib.pl:private-key:1755
+#
+# webmin_core/miniserv.pem: upstream Webmin's public default certificate, in
+# the 2.102 source import (2025) and removed in 3ce4b25e (2026-08-24); Webmin
+# setup generates its own key, and an appliance serves the certificate it
+# makes at first boot.
+4b0ac1b68b3c4785676ed4b40932d26959e46bd3:webmin_core/miniserv.pem:private-key:22
