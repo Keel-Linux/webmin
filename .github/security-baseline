@@ -1,0 +1,85 @@
+# Security scan baseline (keel-linux/.github, security-scan.yml): findings
+# that were read and are not a risk, one per line, the fingerprint and why.
+bandit:B113:buildsrc_lib/__init__.py:86729a1c1720 maintainer tool: a request with no timeout can only hang buildsrc on a stalled download; no exposure
+bandit:B202:buildsrc_lib/__init__.py:cf0a8ba1da52 maintainer tool: extracts the upstream Webmin release tarball only after its GPG signature is verified (_validate_file); the tarball is the source being packaged
+semgrep:bash.lang.best-practice.iteration-over-ls-output.iteration-over-ls-output:webmin_core/update-from-repo.sh:37e9e2f17465 style only: loop over ls of module.info files in Webmin's own source tree
+semgrep:bash.lang.best-practice.useless-cat.useless-cat:webmin_core/update-from-repo.sh:5d98114f5b63 style only: useless cat in a pipeline
+shellcheck:SC1007:debian/prerm:d9a5243e3284 shell lint, not a security risk: 'x= y' style empty assignment in a local declaration, intended
+shellcheck:SC1078:themes/authentic-theme/theme-update.sh:072650020257 shell lint, not a security risk: a multi-line quoted message with ANSI colours, as intended (upstream theme updater)
+shellcheck:SC1078:themes/authentic-theme/theme-update.sh:0e615ba30f17 shell lint, not a security risk: a multi-line quoted message with ANSI colours, as intended (upstream theme updater)
+shellcheck:SC1078:themes/authentic-theme/theme-update.sh:c528cb7d9453 shell lint, not a security risk: a multi-line quoted message with ANSI colours, as intended (upstream theme updater)
+shellcheck:SC1078:themes/authentic-theme/theme-update.sh:f4e11ccd5617 shell lint, not a security risk: a multi-line quoted message with ANSI colours, as intended (upstream theme updater)
+shellcheck:SC1090:webmin_core/setup.sh:2c39eb381400 shell lint, not a security risk: a sourced file whose path is computed, shellcheck cannot follow it
+shellcheck:SC2010:webmin_core/setup.sh:7a237ceebdc4 shell lint, not a security risk: ls piped to grep
+shellcheck:SC2010:webmin_core/setup.sh:97a950880ca0 shell lint, not a security risk: ls piped to grep
+shellcheck:SC2027:themes/authentic-theme/theme-update.sh:072650020257 shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2027:themes/authentic-theme/theme-update.sh:0e615ba30f17 shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2027:themes/authentic-theme/theme-update.sh:62e55ae3a7a3 shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2027:themes/authentic-theme/theme-update.sh:9e6dc595c1dc shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2027:themes/authentic-theme/theme-update.sh:c528cb7d9453 shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2027:themes/authentic-theme/theme-update.sh:eda2e8bdc7c8 shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2027:themes/authentic-theme/theme-update.sh:f4e11ccd5617 shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2027:webmin_core/update-from-repo.sh:a8e46161c464 shell lint, not a security risk: nested quotes in a su -c string built from build-time variables
+shellcheck:SC2034:modules/net/rc.inet1:7878dff6e4a6 shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:plugins_deb_rules.sh:4909ed225ea3 shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/setup.sh:8e1253f1bd8f shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/update-from-repo.sh:0acfda3895d2 shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/update-from-repo.sh:46a4113b7f99 shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/update-from-repo.sh:4a0e39716c7d shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/update-from-repo.sh:e27567f7b831 shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/update-from-repo.sh:f2f011a28072 shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/webmin-init:694c312d91d1 shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2034:webmin_core/webmin-init:b795556c8a3a shell lint, not a security risk: a variable read by a sourcing script or left unused
+shellcheck:SC2045:webmin_core/update-from-repo.sh:37e9e2f17465 shell lint, not a security risk: iterates over ls output of a directory the script controls
+shellcheck:SC2046:webmin_core/setup.sh:939a1d944a3e shell lint, not a security risk: unquoted command substitution over values the script itself produces
+shellcheck:SC2046:webmin_core/update-from-repo.sh:d2df3df25bbe shell lint, not a security risk: unquoted command substitution over values the script itself produces
+shellcheck:SC2069:debian/webmin.postinst:cb007b51f580 shell lint, not a security risk: redirection order, affects only where output goes
+shellcheck:SC2071:themes/authentic-theme/theme-update.sh:378074a8db5d shell lint, not a security risk: string comparison of numbers, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:22b130f4abec shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:43299cde1f21 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:472051d0917d shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:6c547845d86d shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:71b0a7449360 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:83aaa98e91ef shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:899cae8454ec shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:9b7c0700d42a shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:b9bb918f7a22 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:bbcf0104e1fc shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:c18e2a6d8624 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:c6c36ff93b91 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:cd4cdba48b26 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:cd52ebfab2ed shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:e80e2bee0f52 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:eb72c4476858 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:f36eb2ececdb shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2154:webmin_core/setup.sh:fc712ceadfb3 shell lint, not a security risk: misspelled variable, a correctness defect
+shellcheck:SC2155:webmin_core/update-from-repo.sh:dc2fce51ff93 shell lint, not a security risk: declare and assign together masks a return value
+shellcheck:SC2164:debian/prerm:d9a5243e3284 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:debian/webmin.postinst:07b15e050bd4 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/setup.sh:2ced45035300 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/setup.sh:50cc82f03a05 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/setup.sh:695e766dfe61 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/setup.sh:939a1d944a3e shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/setup.sh:bb4e0bf6af64 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/setup.sh:c71d065117ae shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/setup.sh:dbd5f1949173 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/update-from-repo.sh:28d313a8ff1a shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/update-from-repo.sh:701cbe8ef47e shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/update-from-repo.sh:8b5a4d5645fc shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/update-from-repo.sh:d2df3df25bbe shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2164:webmin_core/update-from-repo.sh:f2f011a28072 shell lint, not a security risk: cd without a failure check in a build-time script
+shellcheck:SC2166:webmin_core/setup.sh:3d5a1d62638a shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:43299cde1f21 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:6835eef9f13b shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:8ca80594ae6f shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:9b7c0700d42a shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:b25afe3d33f2 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:c18e2a6d8624 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:cd52ebfab2ed shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:ced9a293d593 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:cfcc9ec276a5 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:db96ad97a2e5 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:e0ecb4271139 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2166:webmin_core/setup.sh:ee5402bd4965 shell lint, not a security risk: -a/-o in test
+shellcheck:SC2319:webmin_core/setup.sh:0c509e91e079 shell lint, not a security risk: $? after a condition
+shellcheck:SC3046:modules/lpadmin/base_coas_driver:e15ff990ae47 shell lint, not a security risk: upstream printer driver template using source in sh
